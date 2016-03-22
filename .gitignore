@@ -1,0 +1,6 @@
+# Directories to be ignored
+# examples, libraries, modes, tools
+examples/
+libraries/
+modes/
+tools/
