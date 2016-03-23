@@ -28,8 +28,8 @@ void magic(int turn)
     for(float i=0;i<TWO_PI;i+=angle)
     {
       //algorithm for spheres at hexagon corners
-      tempX = cos(i) * circleRadius*(turn-1)/2 + midX;
-      tempY = sin(i) * circleRadius*(turn-1)/2 + midY;
+      tempX = cos(i) * circleDistance*(turn-1)/2 + midX;
+      tempY = sin(i) * circleDistance*(turn-1)/2 + midY;
       ++count;
       drawSphere(tempX, tempY, circleRadius);
       
@@ -63,11 +63,15 @@ void drawing(int turn)
     magic(turn);
     turn--;
   }
-  println(count); //<>//
+  //println(count); //<>//
 }
 
 void drawSphere(float coord_x, float coord_y, float peri)
 {
+  //randomisation of radius and color
+  //stroke(random(100),random(100),random(100),random(100));
+  peri = peri * random(0.9  , 1.2);
+  //drawing a circle
   ellipse(coord_x, coord_y, peri, peri);
 }
 
@@ -85,6 +89,8 @@ void drawingMouseColored()
 
 void draw()
 {
+  //circleRadius = int(64 * sin(radians(frameCount/2)));
+  size = int(random(1,10));
   drawingHiTech();
   //drawingMouseColored();
   //line(pmouseX, pmouseY, mouseX, mouseY);
@@ -98,7 +104,7 @@ void setup()
   //do not fill inside the geometries - circles
   noFill();
   //thickness of circles
-  strokeWeight(2);
+  strokeWeight(1);
   //white stroke color
   stroke(255,255,255,255);
   //noLoop();
