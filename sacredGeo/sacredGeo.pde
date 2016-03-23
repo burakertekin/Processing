@@ -20,24 +20,24 @@ PVector[] divide(float x1, float y1, float x2, float y2, int n)
 void magic(int turn)
 {
   float tempX, tempY;
-  float prevX = 0;
-  float prevY = 0;
+  float prevX = -5;
+  float prevY = -5;
   if(turn>1)
   {
     float angle = TWO_PI/6;
     for(float i=0;i<TWO_PI;i+=angle)
     {
       //algorithm for spheres at hexagon corners
-      tempX = cos(i) * circleDistance*(turn-1)/2 + midX;
-      tempY = sin(i) * circleDistance*(turn-1)/2 + midY;
+      tempX = cos(i) * circleDistance*(turn-1)/2;
+      tempY = sin(i) * circleDistance*(turn-1)/2;
       ++count;
-      drawSphere(tempX, tempY, circleRadius);
+      //drawSphere(tempX, tempY, circleRadius);
       
-      if(prevX != 0 && prevY !=0)
+      if(prevX != -5 && prevY != -5)
       {
         //we have a previous point that we can check
         PVector[] pts = divide(prevX,prevY,tempX,tempY,turn-1);
-        for(int k=1;k < pts.length-1;++k)
+        for(int k=0;k < pts.length-1;++k)
         {
           ++count;
           drawSphere(pts[k].x, pts[k].y, circleRadius);
@@ -51,7 +51,7 @@ void magic(int turn)
     }
   else
   {
-    drawSphere(midX, midY, circleRadius);
+    drawSphere(0, 0, circleRadius);
     count++;
   }
 }
@@ -60,24 +60,25 @@ void drawing(int turn)
 {
   while(turn>0)
   {
+    stroke(random(256),random(256),random(256),256/(turn*4));
+    //stroke(random(256),random(256),random(256),alphaVal);
     magic(turn);
     turn--;
-  }
-  //println(count); //<>//
+  } //<>//
 }
 
 void drawSphere(float coord_x, float coord_y, float peri)
 {
   //randomisation of radius and color
   //stroke(random(100),random(100),random(100),random(100));
-  peri = peri * random(0.9  , 1.2);
+  //peri = peri * random(0.9  , 1.2);
   //drawing a circle
   ellipse(coord_x, coord_y, peri, peri);
 }
 
 void drawingHiTech()
 {  
-  stroke(random(256),random(256),random(256),random(256));
+  //stroke(random(256),random(256),random(256),random(256));
   drawing(size);
 }
 
@@ -89,9 +90,29 @@ void drawingMouseColored()
 
 void draw()
 {
-  //circleRadius = int(64 * sin(radians(frameCount/2)));
-  size = int(random(1,10));
+  circleRadius = int(64 * sin(radians(frameCount/2)));
+  size = int(random(1,20));
+  pushMatrix();
+  //translating the shape to middle point
+  translate(midX,midY);
+  rotate(rotator*TWO_PI/360);
+  rotator+=rotationSpeed;
   drawingHiTech();
+  popMatrix();
+  
+  
+  if(mousePressed)
+  {
+    clear();
+  }
+  
+  /*
+  if(!mousePressed && alphaVal<255)
+    ++alphaVal;
+  else if(mousePressed && alphaVal>0)
+    --alphaVal;
+    */
+  
   //drawingMouseColored();
   //line(pmouseX, pmouseY, mouseX, mouseY);
 }
@@ -108,6 +129,7 @@ void setup()
   //white stroke color
   stroke(255,255,255,255);
   //noLoop();
+  //frameRate(1);
 }
 
 
