@@ -1,19 +1,20 @@
-String filename = "me.JPG"; //<>//
+String filename = "bsk4.JPG"; //<>//
 PImage img, img2;
 int width;
 int height;
 int pixelCount;
 //division size for pts and lines
 int div;
-int divSize = 3000;
+int divSize = 10000;
 //geometry size
 float circleSize = 4;
 float lineThickness = 0.7;
+int divide = 2;
 
 void settings()
 {
   img = loadImage(filename);
-  img.resize(img.width/2, img.height/2);
+  img.resize(img.width/divide, img.height/divide);
   width = img.width;
   height = img.height;
   size(img.width, img.height);
@@ -134,6 +135,11 @@ void draw()
   lightLinePts.clear();
   //drawCircles(darkPts, darkLinePts);
   //drawCircles(lightPts, lightLinePts);
+  
+  //save the output
+  String outputFile = filename.substring(0,filename.length()-4);
+  println("output: " + outputFile + ".jpg");
+  save(outputFile+"_lineart.jpg");
 }
 
 void drawLines(ArrayList<points> linePts)

@@ -1,0 +1,9 @@
+#ignore .jpg files
+*.jpg
+*.JPG
+*.jpeg
+*.JPEG
+*.png
+*.tif
+*.tiff
+*.exr
