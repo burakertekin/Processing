@@ -1,3 +1,7 @@
+import codeanticode.syphon.*;
+
+SyphonServer server;
+
 PVector[] divide(float x1, float y1, float x2, float y2, int n)
 {    
  /**
@@ -60,7 +64,7 @@ void drawing(int turn)
 {
   while(turn>0)
   {
-    stroke(random(256),random(256),random(256),256/(turn*4));
+    stroke(random(256),random(256),random(256),256/(turn*2));
     //stroke(random(256),random(256),random(256),alphaVal);
     magic(turn);
     turn--;
@@ -115,6 +119,7 @@ void draw()
   
   //drawingMouseColored();
   //line(pmouseX, pmouseY, mouseX, mouseY);
+  server.sendScreen();
 }
 
 
@@ -130,11 +135,13 @@ void setup()
   stroke(255,255,255,255);
   //noLoop();
   //frameRate(1);
+  server = new SyphonServer(this, "Processing Syphon");
 }
 
 
 void settings()
 {
   //setting up the size of the window
-  size(width * size, height * size);
+  size(width * size, height * size, P2D);
+  PJOGL.profile=1;
 }

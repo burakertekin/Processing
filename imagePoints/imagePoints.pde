@@ -1,10 +1,23 @@
-int width = 2560/2;
-int height = 1600/2;
-String filename = "forest1.jpg";
+String filename = "me.JPG"; //<>//
+PImage img, img2;
+int width;
+int height;
+int pixelCount;
+//division size for pts and lines
+int div;
+int divSize = 3000;
+//geometry size
+float circleSize = 4;
+float lineThickness = 0.7;
 
 void settings()
 {
-  size(width, height);
+  img = loadImage(filename);
+  img.resize(img.width/2, img.height/2);
+  width = img.width;
+  height = img.height;
+  size(img.width, img.height);
+  pixelCount = img.width * img.height;
 }
 
 class points
@@ -15,79 +28,88 @@ class points
   color col;
 }
 
-//image object
-PImage img, img2;
-
 //dynamic array of points to be drawn
-ArrayList<points> pts = new ArrayList<points>();
-ArrayList<points> linePts = new ArrayList<points>();
-
-//division size for pts and lines
-int div = 100;
-
-//geometry size
-float circleSize = 6;
-float lineThickness = 0.7;
+ArrayList<points> darkPts = new ArrayList<points>();
+ArrayList<points> darkLinePts = new ArrayList<points>();
+ArrayList<points> lightPts = new ArrayList<points>();
+ArrayList<points> lightLinePts = new ArrayList<points>();
 
 void setup()
 {
+  div = pixelCount / divSize;
   smooth(4);
   //loading the image
-  img = loadImage(filename);
-  img.resize(width, height);
-  
+  //img = loadImage(filename);
+  //img.resize(img.width/2, img.height/2);
+
   //black and white filter
   //img.filter(THRESHOLD, 0.2);
-  
+
   //gray filter
   //img.filter(GRAY);
-  
+
   //blur filter
   //img.filter(BLUR, 6);
-  
+
   //erode filter
   //img.filter(ERODE);
-  
+
   //dilate filter
   //img.filter(DILATE);
-  
+
   //cartoonish look
   //img.filter(POSTERIZE, 2);
-  
+
   //negative
   //img.filter(INVERT);
-  
+
   //no animation
   noLoop();
 }
 
 void fillArray()
 {
-  pts.clear();
+  darkPts.clear();
+  lightPts.clear();
   img.loadPixels();
-  int count = 0;
-  for(int i =0; i<width; ++i)
+  int darkcount = 0;
+  int lightcount = 0;
+  for (int i =0; i<width; ++i)
   {
-    for(int j=0; j<height; ++j)
+    for (int j=0; j<height; ++j)
     {
-      color c = img.get(i,j);
-      if(blue(c) < 100 && red(c) < 100 && green(c) < 100)
+      color c = img.get(i, j);
+      if (blue(c) < 125 && red(c) < 125 && green(c) < 125)
       {
         points temp = new points();
         temp.x = i;
         temp.y = j;
         temp.col = c;
-        pts.add(temp);
-        if(count % div == 0)
+        darkPts.add(temp);
+        if (darkcount % div == 0)
         {
-          linePts.add(temp);
+          darkLinePts.add(temp);
         }
-        ++count;
+        ++darkcount;
+      } 
+      else
+      {
+        points temp = new points();
+        temp.x = i;
+        temp.y = j;
+        temp.col = c;
+        lightPts.add(temp);
+        if (lightcount % div == 0)
+        {
+          lightLinePts.add(temp);
+        }
+        ++lightcount;
       }
     }
   }
   //pixel count of black pixels
-  print("pixel count: " + count + "\n");
+  println("dark pixel count: " + darkcount);
+  println("light pixel count: " + lightcount);
 }
 
 void draw()
@@ -96,60 +118,64 @@ void draw()
   //color of the circles
   //fill (#2822F0);
   //color of the lines
-  stroke (#DBEBFF);
+  //stroke (#DBEBFF);
   strokeWeight (lineThickness);
-  
-  //show image
+
+  //show image as background - faded
   img2 = loadImage(filename);
   img2.resize(width, height);
-  tint(255,177);
+  tint(255, 177);
   //image(img2, 0, 0);
-  
-  fillArray(); //<>//
-  drawLines();
-  linePts.clear();
-  drawCircles();
-  
+
+  fillArray();
+  drawLines(darkLinePts);
+  drawLines(lightLinePts);
+  darkLinePts.clear();
+  lightLinePts.clear();
+  //drawCircles(darkPts, darkLinePts);
+  //drawCircles(lightPts, lightLinePts);
 }
 
-void drawLines()
+void drawLines(ArrayList<points> linePts)
 {
-  for(int i = 0; i < linePts.size(); ++i)
+  for (int i = 0; i < linePts.size(); ++i)
   {
     points temp1 = linePts.get(i);
     float x1 = temp1.x;
     float y1 = temp1.y;
- 
-    for(int j = i+1; j < linePts.size(); ++j)
+    color c1 = temp1.col;
+
+    for (int j = i+1; j < linePts.size(); ++j)
     {
       points temp2 = linePts.get(j);
       float x2 = temp2.x;
       float y2 = temp2.y;
- 
+      color c2 = temp2.col;
+
       float distance = dist (x1, y1, x2, y2);
- 
+
       if (distance > 10 && distance < 30)
       {
+        stroke(avgColor(c1, c2));
         line (x1, y1, x2, y2);
       }
     }
   }
 }
- 
-void drawCircles()
+
+void drawCircles(ArrayList<points> pts, ArrayList<points> linePts)
 {
-  for(int i = 0; i < pts.size(); i += div)
+  for (int i = 0; i < pts.size(); i += div)
   {
     points temp = pts.get(i);
     float x = temp.x;
     float y = temp.y;
     linePts.add(temp);
-    
+
     color asd = complement(temp.col);
-    
-    println(red(temp.col));
+
     fill(red(asd), green(asd), blue(asd));
-   
+
     ellipse (x, y, circleSize, circleSize);
   }
 }
@@ -159,9 +185,21 @@ color complement(color original)
   float R = red(original);
   float G = green(original);
   float B = blue(original);
-  float minRGB = min(R,min(G,B));
-  float maxRGB = max(R,max(G,B));
+  float minRGB = min(R, min(G, B));
+  float maxRGB = max(R, max(G, B));
   float minPlusMax = minRGB + maxRGB;
   color complement = color(minPlusMax-R, minPlusMax-G, minPlusMax-B);
   return complement;
+}
+
+color avgColor(color c1, color c2)
+{
+  float r1 = red(c1);
+  float g1 = green(c1);
+  float b1 = blue(c1);
+  float r2 = red(c2);
+  float g2 = green(c2);
+  float b2 = blue(c2);
+  color avg = color((r1+r2)/2, (g1+g2)/2, (b1+b2)/2);
+  return avg;
 }
