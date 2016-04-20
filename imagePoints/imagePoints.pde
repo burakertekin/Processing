@@ -1,11 +1,11 @@
-String filename = "bsk4.JPG"; //<>//
+String filename = "moss.jpg"; //<>//
 PImage img, img2;
 int width;
 int height;
 int pixelCount;
 //division size for pts and lines
 int div;
-int divSize = 10000;
+int divSize = 15000;
 //geometry size
 float circleSize = 4;
 float lineThickness = 0.7;
