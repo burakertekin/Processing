@@ -32,7 +32,7 @@ void setup()
   stroke(255);
   pushMatrix();
   //rotateX(60);
-  camera(0.0, 0.0, 50.0, width/2, height/2, -10.0, 0.0, 1.0,0.0);
+  //camera(width, 0.0, 50.0, width/2, height/2, -10.0, 0.0, 1.0, 0.0);
   popMatrix();
   //camera = new PeasyCam(this, width/2, height/2, 500, 255);
   //camera.setMinimumDistance(50);
@@ -44,6 +44,8 @@ void setup()
 
 void draw()
 {
+  //eyeX, eyeY, eyeZ, centerX, centerY, centerZ, upX, upY, upZ
+  camera(0.0, 0.0, -500.0, width, height, 0.0, 0.0, 1.0, 0.0);
   getPts();
 }
 
@@ -62,9 +64,9 @@ void getPts()
       int b = c & 0xFF;
       if(r != 0)
       {
-        float len = r*0.00001;
-        stroke(r, r, r, r*0.1);
-        line(i, j, i, j, 100, -len);
+        float len = pow(2, r)*0.000001;
+        stroke(r, r, r);
+        line(i, j, i, j, 0, -len);
       }
     }
   }
