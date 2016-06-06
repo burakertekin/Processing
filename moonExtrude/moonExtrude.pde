@@ -18,16 +18,25 @@ class pixel
 
 void settings()
 {
-  img = loadImage(filename);
+  /*
+  img = loadImage(filename); //<>//
   img.resize(img.width/div, img.height/div);
   width = img.width;
   height = img.height;
   size(width, height, P3D);
   pixelCount = img.width * img.height;
+  */
 }
 
 void setup()
 {
+  size(100,100, P3D);
+  img = loadImage(filename);
+  img.resize(img.width/div, img.height/div);
+  width = img.width;
+  height = img.height;
+  pixelCount = img.width * img.height;
+  
   background(0);
   stroke(255);
   pushMatrix();

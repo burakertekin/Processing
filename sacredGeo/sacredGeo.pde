@@ -2,6 +2,18 @@ import codeanticode.syphon.*;
 
 SyphonServer server;
 
+int width = 70;
+int height = 70;
+int size = 8;
+int circleRadius = 64;
+int circleDistance = 64;
+int count = 0;
+int midX = width*size/2;
+int midY = height*size/2;
+float rotator = 0;
+float rotationSpeed = 0.01;
+int alphaVal=255;
+
 PVector[] divide(float x1, float y1, float x2, float y2, int n)
 {    
  /**
@@ -64,7 +76,7 @@ void drawing(int turn)
 {
   while(turn>0)
   {
-    stroke(random(256),random(256),random(256),256/(turn*2));
+    stroke(random(256),random(256),random(256),256/(turn));
     //stroke(random(256),random(256),random(256),alphaVal);
     magic(turn);
     turn--;
@@ -86,21 +98,23 @@ void drawingHiTech()
   drawing(size);
 }
 
-void drawingMouseColored()
-{
-  stroke(pmouseX, pmouseY, mouseX);
-  drawing(size);
-}
-
 void draw()
 {
-  circleRadius = int(64 * sin(radians(frameCount/2)));
-  size = int(random(1,20));
+  //circleRadius = int(64 * sin(radians(frameCount/2)));
+  //size = int(random(1,20));
   pushMatrix();
   //translating the shape to middle point
   translate(midX,midY);
-  rotate(rotator*TWO_PI/360);
-  rotator+=rotationSpeed;
+  //rotate(rotator*TWO_PI/360);
+  if(rotator<1.5)
+  {
+    rotator+=rotationSpeed;
+  }
+  else
+  {
+    rotator-=rotationSpeed;
+  }
+  scale(rotator);
   drawingHiTech();
   popMatrix();
   
@@ -108,6 +122,7 @@ void draw()
   if(mousePressed)
   {
     clear();
+    rotator = 0;
   }
   
   /*
@@ -117,8 +132,6 @@ void draw()
     --alphaVal;
     */
   
-  //drawingMouseColored();
-  //line(pmouseX, pmouseY, mouseX, mouseY);
   server.sendScreen();
 }
 
@@ -130,11 +143,12 @@ void setup()
   //do not fill inside the geometries - circles
   noFill();
   //thickness of circles
-  strokeWeight(1);
+  strokeWeight(0.5);
   //white stroke color
   stroke(255,255,255,255);
   //noLoop();
-  //frameRate(1);
+  frameRate(60);
+  colorMode(RGB);
   server = new SyphonServer(this, "Processing Syphon");
 }
 
