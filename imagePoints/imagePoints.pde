@@ -1,4 +1,4 @@
-String filename = "dond.JPG"; //<>//
+String filename = "me.JPG"; //<>//
 PImage img, img2;
 int width;
 int height;
@@ -10,16 +10,6 @@ int divSize = 4000;
 float circleSize = 4;
 float lineThickness = 0.7;
 int divide = 2;
-
-void settings()
-{
-  img = loadImage(filename);
-  img.resize(img.width/divide, img.height/divide);
-  width = img.width;
-  height = img.height;
-  size(img.width, img.height);
-  pixelCount = img.width * img.height;
-}
 
 class points
 {
@@ -37,6 +27,13 @@ ArrayList<points> lightLinePts = new ArrayList<points>();
 
 void setup()
 {
+  img = loadImage(filename);
+  img.resize(img.width/divide, img.height/divide);
+  width = img.width;
+  height = img.height;
+  //size(img.width, img.height);
+  frame.setSize(img.width, img.height);
+  pixelCount = img.width * img.height;
   div = pixelCount / divSize;
   smooth(4);
   //loading the image
