@@ -503,6 +503,46 @@
                     type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="21"
                     byte3="45" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
                     pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/link2/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="22"
+                    byte3="44" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/link4/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="24"
+                    byte3="71" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/link6/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="26"
+                    byte3="34" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/link5/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="25"
+                    byte3="12" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/link3/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="23"
+                    byte3="85" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/link8/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="28"
+                    byte3="38" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/link7/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="27"
+                    byte3="23" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/link1/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="21"
+                    byte3="32" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
     </contextualShortcuts>
   </shortcuts>
 </avenue>
