@@ -1,17 +1,17 @@
 int tunnelRadius = 30;
 int tunnelSides = 18;
-int tunnelDepth = 1;//50;
+int tunnelDepth = 50;//50;
 int cylinderRadius = 5;
 int cylinderHeight = 20;
-float angle;
 coord[] c;
-float rot = 0.01;
-float total_rot = 0;
+float rot = 0.02;
+int rot_count = 75;
+boolean forward = true;
 
 class coord
 {
   float x, y, z, angle;
-  int level;
+  int rot;
   
   coord(float _x, float _y, float _z, float _angle)
   {
@@ -19,6 +19,7 @@ class coord
     y = _y;
     z = _z;
     angle = _angle;
+    rot = 0;
   }
 }
 
@@ -92,6 +93,7 @@ void setup()
   c = new coord[(tunnelSides) * tunnelDepth];
   //tunnel coordinates
   int count = 0;
+  float angle;
   for (int z=0; z < tunnelDepth; z++)
   {
     for (int i=0; i < tunnelSides; ++i)
@@ -120,18 +122,26 @@ void draw()
     pushMatrix();
     translate(c[i].x, c[i].y, c[i].z + (c[i].z * cylinderRadius * 2));
     
-    c[i].angle += rot - (c[i].z * 0.0005);
-    angle = c[i].angle;
-    //if(c[i].angle > TWO_PI - 2)
-    if(total_rot < TWO_PI*4)
+    if(c[i].rot == rot_count)
     {
-      rot = 0.01;
-      total_rot += 0.01;
+      forward = false;
     }
-    else if(total_rot > TWO_PI*4)
+    else if(c[i].rot == -75)
     {
-      rot = -0.01;
-      total_rot -= 0.01;
+      forward = true;
+    }
+    
+    if(forward)
+    {
+      c[i].angle += rot;// - (c[i].z * 0.005);// + noise(c[i].x,c[i].y,c[i].z)*0.1;
+      //c[i].angle += noise(c[i].x,c[i].y)*0.01 - (c[i].z * 0.005); 
+      c[i].rot++;
+    }
+    else
+    {
+      c[i].angle -= rot;// - (c[i].z * 0.005);// + noise(c[i].x,c[i].y,c[i].z)*0.1;
+      //c[i].angle -= noise(c[i].x,c[i].y)*0.01 - (c[i].z * 0.005); 
+      c[i].rot--;
     }
     
     rotateZ(c[i].angle);
