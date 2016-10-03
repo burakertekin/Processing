@@ -11,7 +11,7 @@ boolean forward = true;
 class coord
 {
   float x, y, z, angle;
-  int rot;
+  int rot, max;
   
   coord(float _x, float _y, float _z, float _angle)
   {
@@ -88,7 +88,6 @@ void setup()
 {
   size(600, 600, P3D);
   background(0);
-  //frameRate(24);
 
   c = new coord[(tunnelSides) * tunnelDepth];
   //tunnel coordinates
@@ -104,6 +103,7 @@ void setup()
       angle = (TWO_PI/tunnelSides*(tunnelSides/2)) - angle;//0.34906587 for 18 sides - 20 degrees angle
       
       c[count] = new coord(x, y, -z, angle);
+      
       count++;
     }
   }
@@ -126,29 +126,33 @@ void draw()
     {
       forward = false;
     }
-    else if(c[i].rot == -75)
+    else if(c[i].rot == -rot_count)
     {
       forward = true;
     }
     
     if(forward)
-    {
-      c[i].angle += rot;// - (c[i].z * 0.005);// + noise(c[i].x,c[i].y,c[i].z)*0.1;
-      //c[i].angle += noise(c[i].x,c[i].y)*0.01 - (c[i].z * 0.005); 
+    { 
+      c[i].angle += rot - (c[i].z * 0.004);// + noise(c[i].x,c[i].y,c[i].z)*0.1;
+      //c[i].angle += noise(c[i].x,c[i].y)*0.01 - (c[i].z * 0.005);
+      
       c[i].rot++;
     }
     else
     {
-      c[i].angle -= rot;// - (c[i].z * 0.005);// + noise(c[i].x,c[i].y,c[i].z)*0.1;
+      c[i].angle -= rot - (c[i].z * 0.004);// + noise(c[i].x,c[i].y,c[i].z)*0.1;
       //c[i].angle -= noise(c[i].x,c[i].y)*0.01 - (c[i].z * 0.005); 
       c[i].rot--;
     }
     
     rotateZ(c[i].angle);
+    float a = random(0,255);
+    float b = random(0,255);
     
     //stroke(random(0,255),0,random(0,255));
-    fill(125,125,125);
-    cylinder(cylinderRadius, 0, cylinderHeight, 12);
+    stroke(a, 50, b);
+    fill(a,0,b);
+    cylinder(cylinderRadius, 0, cylinderHeight, 16);
     popMatrix();
   }
   popMatrix();
