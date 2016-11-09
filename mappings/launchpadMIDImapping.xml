@@ -5,6 +5,24 @@
                revision="56269" id="1"/>
   <shortcuts>
     <contextualShortcuts>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="2"
+                    contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/composition/deck#2/select"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="176" byte2="109"
+                    byte3="127" timeStamp="0" controllerType="1" useVelocity="0"
+                    invertValue="0" pianoMode="0" relativeStepValue="0.0078125" startValue="0"
+                    stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="3"
+                    contextIndex1="0" contextIndex2="4" contextIndex3="-1" path="/layer#1/clip#5/connect"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="144" byte2="55"
+                    byte3="127" timeStamp="83210.3926" controllerType="1" useVelocity="0"
+                    invertValue="0" pianoMode="0" relativeStepValue="0.0078125" startValue="0"
+                    stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="2" contextIndex2="7" contextIndex3="-1" path="/layer#3/clip#8/video/position/jumptopointsofinterest"
+                    type="3" optionIndex="3" loop="0" numBytes="3" byte1="144" byte2="34"
+                    byte3="127" timeStamp="83914.9976" controllerType="1" useVelocity="0"
+                    invertValue="0" pianoMode="0" relativeStepValue="0.0078125" startValue="0"
+                    stopValue="1"/>
       <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="3"
                     contextIndex1="2" contextIndex2="3" contextIndex3="-1" path="/layer#3/clip#4/connect"
                     type="3" optionIndex="-1" loop="0" numBytes="3" byte1="144" byte2="74"
@@ -99,24 +117,6 @@
                     contextIndex1="5" contextIndex2="-1" contextIndex3="-1" path="/track#6/connect"
                     type="3" optionIndex="-1" loop="0" numBytes="3" byte1="144" byte2="86"
                     byte3="127" timeStamp="83103.0186" controllerType="1" useVelocity="0"
-                    invertValue="0" pianoMode="0" relativeStepValue="0.0078125" startValue="0"
-                    stopValue="1"/>
-      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="2"
-                    contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/composition/deck#2/select"
-                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="176" byte2="109"
-                    byte3="127" timeStamp="0" controllerType="1" useVelocity="0"
-                    invertValue="0" pianoMode="0" relativeStepValue="0.0078125" startValue="0"
-                    stopValue="1"/>
-      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="3"
-                    contextIndex1="0" contextIndex2="4" contextIndex3="-1" path="/layer#1/clip#5/connect"
-                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="144" byte2="55"
-                    byte3="127" timeStamp="83210.3926" controllerType="1" useVelocity="0"
-                    invertValue="0" pianoMode="0" relativeStepValue="0.0078125" startValue="0"
-                    stopValue="1"/>
-      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
-                    contextIndex1="2" contextIndex2="7" contextIndex3="-1" path="/layer#3/clip#8/video/position/jumptopointsofinterest"
-                    type="3" optionIndex="3" loop="0" numBytes="3" byte1="144" byte2="34"
-                    byte3="127" timeStamp="83914.9976" controllerType="1" useVelocity="0"
                     invertValue="0" pianoMode="0" relativeStepValue="0.0078125" startValue="0"
                     stopValue="1"/>
       <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="3"
@@ -299,10 +299,11 @@
                     invertValue="0" pianoMode="0" relativeStepValue="0.0078125" startValue="0"
                     stopValue="1"/>
       <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
-                    contextIndex1="2" contextIndex2="-1" contextIndex3="-1" path="/layer#3/video/opacity/values"
-                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="176" byte2="21"
-                    byte3="71" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
-                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+                    contextIndex1="2" contextIndex2="7" contextIndex3="-1" path="/layer#3/clip#8/video/position/jumptopointsofinterest"
+                    type="3" optionIndex="0" loop="0" numBytes="3" byte1="144" byte2="31"
+                    byte3="127" timeStamp="83910.9886" controllerType="1" useVelocity="0"
+                    invertValue="0" pianoMode="0" relativeStepValue="0.0078125" startValue="0"
+                    stopValue="1"/>
       <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
                     contextIndex1="2" contextIndex2="7" contextIndex3="-1" path="/layer#3/clip#8/video/position/pointsofinterest"
                     type="3" optionIndex="2" loop="0" numBytes="3" byte1="144" byte2="43"
@@ -310,15 +311,14 @@
                     invertValue="0" pianoMode="0" relativeStepValue="0.0078125" startValue="0"
                     stopValue="1"/>
       <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="2" contextIndex2="-1" contextIndex3="-1" path="/layer#3/video/opacity/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="176" byte2="21"
+                    byte3="71" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
                     contextIndex1="2" contextIndex2="7" contextIndex3="-1" path="/layer#3/clip#8/video/position/jumptopointsofinterest"
                     type="3" optionIndex="4" loop="0" numBytes="3" byte1="144" byte2="35"
                     byte3="127" timeStamp="83916.5607" controllerType="1" useVelocity="0"
-                    invertValue="0" pianoMode="0" relativeStepValue="0.0078125" startValue="0"
-                    stopValue="1"/>
-      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
-                    contextIndex1="2" contextIndex2="7" contextIndex3="-1" path="/layer#3/clip#8/video/position/jumptopointsofinterest"
-                    type="3" optionIndex="0" loop="0" numBytes="3" byte1="144" byte2="31"
-                    byte3="127" timeStamp="83910.9886" controllerType="1" useVelocity="0"
                     invertValue="0" pianoMode="0" relativeStepValue="0.0078125" startValue="0"
                     stopValue="1"/>
       <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
@@ -357,15 +357,15 @@
                     pianoMode="0" relativeStepValue="0.0227272727" startValue="0"
                     stopValue="1"/>
       <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
-                    contextIndex1="2" contextIndex2="4" contextIndex3="-1" path="/layer#3/clip#5/video/position/direction"
-                    type="3" optionIndex="0" loop="0" numBytes="3" byte1="144" byte2="9"
-                    byte3="127" timeStamp="87582.8987" controllerType="1" useVelocity="0"
-                    invertValue="0" pianoMode="0" relativeStepValue="0.0078125" startValue="0"
-                    stopValue="1"/>
-      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
                     contextIndex1="0" contextIndex2="5" contextIndex3="-1" path="/layer#1/clip#6/video/position/playmode"
                     type="3" optionIndex="1" loop="0" numBytes="3" byte1="144" byte2="26"
                     byte3="127" timeStamp="87668.3487" controllerType="1" useVelocity="0"
+                    invertValue="0" pianoMode="0" relativeStepValue="0.0078125" startValue="0"
+                    stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="2" contextIndex2="4" contextIndex3="-1" path="/layer#3/clip#5/video/position/direction"
+                    type="3" optionIndex="0" loop="0" numBytes="3" byte1="144" byte2="9"
+                    byte3="127" timeStamp="87582.8987" controllerType="1" useVelocity="0"
                     invertValue="0" pianoMode="0" relativeStepValue="0.0078125" startValue="0"
                     stopValue="1"/>
       <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
@@ -437,7 +437,7 @@
       <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
                     contextIndex1="1" contextIndex2="-1" contextIndex3="-1" path="/layer#2/link8/values"
                     type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="28"
-                    byte3="11" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    byte3="65" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
                     pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
       <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
                     contextIndex1="2" contextIndex2="2" contextIndex3="-1" path="/layer#3/clip#3/video/beatloop"
@@ -542,6 +542,87 @@
                     contextIndex1="0" contextIndex2="-1" contextIndex3="-1" path="/layer#1/link1/values"
                     type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="21"
                     byte3="32" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="1" contextIndex2="4" contextIndex3="-1" path="/layer#2/clip#5/link3/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="43"
+                    byte3="67" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="1" contextIndex2="4" contextIndex3="-1" path="/layer#2/clip#5/link2/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="42"
+                    byte3="63" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="1" contextIndex2="2" contextIndex3="-1" path="/layer#2/clip#3/link7/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="47"
+                    byte3="69" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="1" contextIndex2="2" contextIndex3="-1" path="/layer#2/clip#3/link8/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="48"
+                    byte3="61" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="1" contextIndex2="2" contextIndex3="-1" path="/layer#2/clip#3/link6/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="46"
+                    byte3="64" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="1" contextIndex2="2" contextIndex3="-1" path="/layer#2/clip#3/link1/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="41"
+                    byte3="59" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="1" contextIndex2="2" contextIndex3="-1" path="/layer#2/clip#3/link5/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="45"
+                    byte3="62" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="1" contextIndex2="4" contextIndex3="-1" path="/layer#2/clip#5/link4/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="44"
+                    byte3="80" timeStamp="82360.1193" controllerType="1" useVelocity="0"
+                    invertValue="0" pianoMode="0" relativeStepValue="0.01" startValue="0"
+                    stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="2" contextIndex2="-1" contextIndex3="-1" path="/layer#3/link3/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="23"
+                    byte3="44" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="2" contextIndex2="-1" contextIndex3="-1" path="/layer#3/link5/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="25"
+                    byte3="68" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="2" contextIndex2="-1" contextIndex3="-1" path="/layer#3/link6/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="26"
+                    byte3="66" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="2" contextIndex2="-1" contextIndex3="-1" path="/layer#3/link8/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="28"
+                    byte3="65" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="2" contextIndex2="-1" contextIndex3="-1" path="/layer#3/link7/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="27"
+                    byte3="71" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="2" contextIndex2="-1" contextIndex3="-1" path="/layer#3/link4/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="24"
+                    byte3="50" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="2" contextIndex2="-1" contextIndex3="-1" path="/layer#3/link1/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="21"
+                    byte3="40" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
+                    pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
+      <midiShortcut isContextual="1" mappingModeType="1" contextDetermination="1"
+                    contextIndex1="2" contextIndex2="-1" contextIndex3="-1" path="/layer#3/link2/values"
+                    type="3" optionIndex="-1" loop="0" numBytes="3" byte1="184" byte2="22"
+                    byte3="84" timeStamp="0" controllerType="1" useVelocity="0" invertValue="0"
                     pianoMode="0" relativeStepValue="0.01" startValue="0" stopValue="1"/>
     </contextualShortcuts>
   </shortcuts>
